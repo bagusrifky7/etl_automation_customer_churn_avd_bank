@@ -1,0 +1,32 @@
+Link Dataset:
+https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn
+
+
+/* create and import table */
+CREATE TABLE public.table_m3 (
+	RowNumber INT,
+	CustomerId SERIAL PRIMARY KEY,
+	Surname VARCHAR,
+	CreditScore INT,
+	Geography VARCHAR,
+	Gender VARCHAR,
+	Age INT,
+	Tenure INT,
+	Balance FLOAT,
+	NumOfProducts INT,
+	HasCrCard INT,
+	IsActiveMember INT,
+	EstimatedSalary FLOAT,
+	Exited INT,
+	Complain INT,
+	"Satifaction Score" INT,
+	"Card Type" VARCHAR,
+	"Point Earned" INT
+);
+
+/* import csv to table */
+/* to use \COPY, i'm using shell command psql */
+\COPY public.table_m3 FROM 'C:\Users\Asus\p2-ftds027-hck-m3-bagusrifky7\bagus_rifky\P2M3_bagus_rifky_data_raw.csv' DELIMITER ',' CSV HEADER;
+
+/* show all table */
+SELECT * FROM table_m3;
